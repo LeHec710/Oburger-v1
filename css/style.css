@@ -1,0 +1,424 @@
+
+/*
+    GENERALS
+*/
+
+:root {
+    /* variables */
+    --dark_grey: #19323C;
+    --grey: #2F464E;
+    --yellow: #DBA324;
+    --white: #F1F7EE;
+}
+
+*, html, body {
+    font-family: 'Kaushan Script', cursive;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--grey);
+    font-weight: normal;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+div.wrapper {
+    width: 80vw;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+h1.title {
+    color: var(--yellow);
+    font-family: 'Kaushan Script', cursive;
+    margin-left: 100pxs;
+}
+
+/*
+    ANIMATIONS
+*/
+
+.anim_right {
+    animation: burger_right 2s forwards;
+}
+.anim_left {
+    animation: burger_left 2s forwards;
+}
+
+@keyframes burger_right {
+    from {
+        right: 0;
+        width: 30vw;
+    }
+    
+    to {
+        right: 80vw;
+        width: 20vw;
+    }
+}
+@keyframes burger_left {
+    from {
+        left: 0;
+        width: 70vw;
+    }
+    
+    to {
+       left: 40vw;
+        width: 80vw;
+    }
+}
+
+/*
+    BACKGROUND
+*/
+
+div.background {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    min-width: 100vw;
+    height: 100vh;
+}
+
+div.background div.left {
+    float: left;
+    position: relative;
+    width: 70vw;
+    height: 100%;
+    background-color: var(--grey);
+    transition: all 2s;
+}
+
+div.background div.right {
+    float: right;
+    position: relative;
+    width: 30vw;
+    height: 100%;
+    background-color: var(--yellow);
+    transition: all 2s;
+}
+
+/*
+    HEADER
+*/
+
+header {
+    height: 100px;
+    width: 100%;
+}
+
+header div.logo img {
+    float: left;
+    width: 75px;
+    line-height: 100px;
+    margin-top: 10px;
+    margin-left: 25px;
+    transition: 0.5s ease;
+}
+
+header nav ul {
+    list-style: none;
+    text-align: center;
+    line-height: 100px;
+    cursor: default;
+}
+
+header nav ul li {
+    transition: 0.5s ease;
+    display: inline-block;
+    color: var(--white);
+    padding: 0 20px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+header nav ul li:hover {
+    transform: translateY(-5px);
+    color: #fff;
+}
+
+/*
+    CONTENT
+*/
+
+div.burger img {
+    position: relative;
+    top: 100px;
+    left: 70vw;
+    transform: translateX(-50%);
+    width: 300px;
+    transition: all 2s ease-in-out;
+}
+
+
+div.content {
+    transition: all 1s ease-in-out;
+}
+
+div.content div.burger-price h2, div.content div.burger-price p {
+    position: absolute;
+    font-size: 78px;
+    right: 50px;
+    top: 70vh;
+    color: var(--dark_grey);
+    opacity: 0.5;
+}
+
+div.content div.burger-price p {
+    font-size: 28px;
+    top: 82vh;
+}
+
+div.content h1#main_title {
+    color: var(--white);
+    font-family: 'Kaushan Script', cursive;
+    position: absolute;
+    top: 150px;
+    left: 10vw;
+    font-size: 42px;
+}
+
+div.content div.box {
+    position: absolute;
+    top: 350px;
+    left: 0;
+    width: 360px;
+    padding: 30px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+    color: var(--dark_grey);
+    background-color: var(--white);
+}
+
+div.content div.box p {
+    margin-left: 20px;
+    width: 75%;
+}
+
+div.content div.box button {
+    position: relative;
+    bottom: -30px;
+    left: 50px;
+    padding: 12px 15px;
+    background-color: var(--yellow);
+    border: none;
+    text-align: left;
+    color: var(--white);
+    transition: 0.5s ease;
+}
+
+div.content div.box button:hover {
+    transform: translateX(10px);
+}
+
+div.content div.box button img {
+    float: right;
+    margin-top: 2px;
+    margin-left: 40px;
+    width: 10px;
+    cursor: pointer;
+}
+
+div.content div.box div.links {
+    position: absolute;
+    left: 100%;
+    top: 0;
+}
+
+div.content div.box div.links div#account, div.content div.box div.links div#cart {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+div.content div.box div.links div#account:hover, div.content div.box div.links div#cart:hover {
+    padding-right: 120px;
+}
+
+div.content div.box div.links div#account:hover p, div.content div.box div.links div#cart:hover p {
+    transition: all 0.2s ease 0.3s;
+    opacity: 1;
+}
+div.content div.box div.links div#account p, div.content div.box div.links div#cart p {
+    position: absolute;
+    transition: all 0.2s ease 0s;
+    width: 200px;
+    transform: translateX(59%);
+    opacity: 0;
+}
+
+div.content div.box div.links div#cart {
+    background-color: var(--yellow);
+    color: var(--dark_grey);
+}
+
+div.content div.box div.links div#account {
+    background-color: var(--dark_grey);
+    color: var(--white);
+}
+
+div.content div.box div.links div#account img, div.content div.box div.links div#cart img {
+    width: 20px;
+}
+
+div.newcontent {
+    transition: 2s ease;
+    opacity: 0;
+    display: none;
+}
+
+
+/*
+    BURGERS
+*/
+
+div.burgers-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 80vw;
+}
+
+div.burgers-list div.burger-item {
+    flex: 0 1 20vw;
+    height: 20vw;
+    margin: 2vw;
+    background-color: var(--dark_grey);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    text-align: center;
+}
+
+div.burgers-list div.burger-item h3 {
+    color: var(--white);
+    padding: 10px 20px;
+    text-align: left;
+}
+
+div.burgers-list div.burger-item img {
+    width: 150px;
+    text-align: center;
+    line-height: 240px;
+}
+
+
+/*
+    COMMANDE
+*/
+
+img.burger-choosen {
+    position: relative;
+    left: 0;
+    width: 300px;
+}
+
+div.burger-form {
+    position: absolute;
+    left: 50vw;
+    top: 250px;
+    color: var(--white);
+}
+
+
+div.burger-form input[type="text"], div.burger-form input[type="number"], div.burger-form select, div.burger-form input[type="submit"] {
+    margin-top: 8px;
+    padding: 10px 25px;
+    width: 250px;
+    border: none;
+    background-color: var(--dark_grey);
+    color: var(--white);
+    border-radius: 5px;    
+}
+
+/* quantite */
+div.burger-form div.quantite {
+    float: right;
+}
+
+div.burger-form input[type="number"] {
+    width: 50px;
+    padding: 5px 10px;
+}
+
+div.burger-form input[type="submit"] {
+    width: auto;
+    float: right;
+}
+
+/* for right arrow padding */
+select {
+    border-right: 20px solid var(--dark_grey)!important;
+}
+
+
+/*
+    CONNEXION/INSCRIPTION
+*/
+
+div.account {
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-left: 10%;
+    display: flex;
+    justify-content: space-between;
+    width: 80vw;
+}
+
+div.account form {
+    margin-top: 30px;
+}
+
+div.account form input {
+    padding: 10px 20px;
+    margin: 10px 0;
+    background-color: var(--dark_grey);
+    border: none;
+    color: var(--white);
+    width: 200px;
+    border-radius: 5px;
+}
+div.account form label {
+    color: var(--white);
+    margin-left: -20px;
+}
+
+div.account div.register {
+    width: 35vw;
+}
+div.account div.register form {
+    float: left;
+    margin-left: 20%;
+}
+
+div.account div.login {
+    float: right;
+    width: 35vw;
+}
+div.account div.login form {
+    float: right;
+    margin-right: 20%;
+}
+
+
+div.account div.separator {
+    margin-top: 50px;
+    height: 40vh;
+    width: 1px;
+    background-color: var(--white);
+}
